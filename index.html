@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Pokedex</title>
+</head>
+<body>
+  <main>
+  <h1>Pokedex</h1>
+  <div id="gens">
+  <button class="gen_button" data-gen-id="1">Generation 1</button>
+  <button class="gen_button" data-gen-id="2">Generation 2</button>
+  <button class="gen_button" data-gen-id="3">Generation 3</button>
+  <button class="gen_button" data-gen-id="4">Generation 4</button>
+  <button class="gen_button" data-gen-id="5">Generation 5</button>
+  <button class="gen_button" data-gen-id="6">Generation 6</button>
+  <button class="gen_button" data-gen-id="7">Generation 7</button>
+  <button class="gen_button" data-gen-id="8">Generation 8</button>
+  <button class="gen_button" data-gen-id="9">Generation 9</button>
+  
+  </div>
+  <h2 id="introTitle">Select which generation of Pokémon you want to see!</h2>
+  <h2 id="genTitle"></h2>
+  <input type="text" id="search" placeholder="Search for pokemons">
+  <div class="dropdown">
+    <select id="typeDropdown">
+      <option value="all">All Types</option>
+      <option value="normal">Normal</option>
+      <option value="fighting">Fighting</option>
+      <option value="flying">Flying</option>
+      <option value="poison">Poison</option>
+      <option value="ground">Ground</option>
+      <option value="rock">Rock</option>
+      <option value="bug">Bug</option>
+      <option value="ghost">Ghost</option>
+      <option value="steel">Steel</option>
+      <option value="fire">Fire</option>
+      <option value="water">Water</option>
+      <option value="grass">Grass</option>
+      <option value="electric">Electric</option>
+      <option value="psychic">Psychic</option>
+      <option value="ice">Ice</option>
+      <option value="dragon">Dragon</option>
+      <option value="dark">Dark</option>
+      <option value="fairy">Fairy</option>
+    </select>
+  </div>
+  <section id="pokeCards">
+    </section>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>
+<!-- function fetchData(limit, offset) {
+  const url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
+
+  fetch(url)
+  .then(response => response.json())
+  .then(json => {
+
+    const fetches = json.results.map(item => {
+      return fetch(item.url).then(res => res.json())
+    })
+
+
+    Promise.all(fetches).then(res => { dataList(res);console.log(res);})
+  })
+  const dataList = (data) => {
+    {
+      document.querySelector('#pokeCards').innerHTML = data.map((item, i) => `<div class="pokeCard"><div class="pokeInfo">#${item.id} ${item.name}<div class="pokeType">${item.types.map(t => `<img id="type" src="https://raw.githubusercontent.com/duiker101/pokemon-type-svg-icons/5781623f147f1bf850f426cfe1874ba56a9b75ee/icons/${t.type.name}.svg" alt="${t.type.name}"/>`).join('')}</div></div><img src="${item.sprites.front_default}"/></div>`).join('');
+    };
+  }
+} -->
